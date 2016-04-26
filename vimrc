@@ -11,18 +11,19 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim' 					" Plugin Installer
 Plugin 'scrooloose/nerdtree'				" File system explorer
-Plugin 'majutsushi/tagbar'					" Tag generator
 Plugin 'Valloric/YouCompleteMe'				" Autocompletion engine
-"Plugin 'scrooloose/syntastic'
 Plugin 'ntpeters/vim-better-whitespace'  	" Better whitespace
 Plugin 'airblade/vim-gitgutter'
 Plugin 'rdnetto/YCM-generator'
+Plugin 'altercation/vim-colors-solarized' 	" Solarized theme
+Plugin 'zhaocai/GoldenView.vim'
+Plugin 'majutsushi/tagbar'					" Tag generator
 "Plugin 'bling/vim-airline'
 "Plugin 'bling/vim-bufferline'
 "Plugin 'vim-airline/vim-airline-themes'
-Plugin 'mkitt/tabline.vim'
-"Plugin 'octol/vim-cpp-enhanced-highlight'	" Better C++ highlighting
-"Plugin 'altercation/vim-colors-solarized' 	" Solarized theme
+"Plugin 'mkitt/tabline.vim'
+"Plugin 'jceb/vim-orgmode'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 
 " Indent, highlighting, and searching
@@ -61,9 +62,9 @@ set showcmd              					" Show already typed keys when more are expected.
 set ttyfast									" Fast re-rendering
 set lazyredraw
 "Cursor
-highlight Cursor guifg=white guibg=black
+highlight Cursor  guifg=white guibg=black
 highlight iCurson guifg=white guibg=steelblue
-"set lazyredraw             					" Only redraw when necessary
+set lazyredraw             					" Only redraw when necessary
 
 
 " Remap header
@@ -80,6 +81,11 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
+nnoremap <leader>m :SwitchGoldenViewMain<CR>:EnableGoldenViewAutoResize<CR>
+
+nnoremap <leader><Tab>   :tabn<CR>
+nnoremap <leader><S-Tab> :tabp<CR>
+
 nnoremap <C-N> :NERDTreeToggle<CR>
 nnoremap <leader>tt :TagbarToggle<CR>
 nnoremap =j :%!python -m json.tool<CR>
@@ -91,13 +97,12 @@ inoremap {} {}<Left><Enter><Enter><Up><Tab>
 
 
 " YCM for C-Family languages
-"let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_server_use_vim_stdout =1
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_server_log_level = 'debug'
 let g:ycm_auto_trigger = 1
-"let g:ycm_complete_in_strings = 1
-"let g:ycm_echo_current_diagnostic=1
+let g:ycm_complete_in_strings = 1
+let g:ycm_echo_current_diagnostic=1
 
 " Set solarized theme
 syntax enable
@@ -112,29 +117,18 @@ autocmd FileType c nnoremap <buffer> <silent> <C-]> :YcmCompleter GoTo<cr>
 " Highlight extra whitespace
 highlight ExtraWhitespace ctermbg=red
 
-"Better C++ Highlighting
-"let g:cpp_class_scope_highlight = 1
-"let g:cpp_experimental_template_highlight = 1
-
-" Vim tabs
-
-" Syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_cpp_compiler="clang++"
-let g:syntastic_cpp_compiler_options="-std=c++11 -stdlib=libc++"
 
 "Airline
 "let g:airline#extensions#tabline#enabled = 1
 "let g:airline#extensions#tabline#left_sep = ' '
 "let g:airline#extensions#tabline#left_alt_sep = '|'
 "let g:airline_theme='wombat'
-
 "bufferline
 "let g:bufferline_echo = 0
 "autocmd VimEnter *
 "  \ let &statusline='%{bufferline#refresh_status()}'
 "    \ .bufferline#get_status_string()
+
+
+" Goldenview
+let g:goldenview__enable_default_mapping = 0
