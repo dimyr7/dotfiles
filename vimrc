@@ -81,7 +81,7 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
-nnoremap <leader>m :SwitchGoldenViewMain<CR>:EnableGoldenViewAutoResize<CR>
+nnoremap <leader>m :SwitchGoldenViewToggle<CR>:EnableGoldenViewAutoResize<CR>
 
 nnoremap <leader><Tab>   :tabn<CR>
 nnoremap <leader><S-Tab> :tabp<CR>
