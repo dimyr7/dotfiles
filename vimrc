@@ -23,7 +23,7 @@ Plugin 'majutsushi/tagbar'					" Tag generator
 "Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'mkitt/tabline.vim'
 "Plugin 'jceb/vim-orgmode'
-Plugin 'tpope/vim-fugitive'
+"Plugin 'tpope/vim-fugitive'
 call vundle#end()
 
 " Indent, highlighting, and searching
