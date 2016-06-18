@@ -50,7 +50,7 @@ set vb 										" Set visual bell
 " Other
 set number									" Line numbers are set
 set ruler
-set scrolloff=5								" number of rows kept above/below the cursor
+set scrolloff=10							" number of rows kept above/below the cursor
 set title
 set noerrorbells
 set laststatus=2
