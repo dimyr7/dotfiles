@@ -106,6 +106,9 @@ nnoremap <leader>gr <Plug>GitGutterRevertHunk
 nnoremap <leader>gs <Plug>GitGutterStageHunk
 
 
+nnoremap <leader>ws :StripWhitespace<CR>:w<CR>
+
+
 " Insert mode remaps
 inoremap jk <ESC>
 inoremap {} {}<Left><Enter><Enter><Up><Tab>
