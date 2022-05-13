@@ -1,18 +1,10 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export SVN_EDITOR=vim
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 
 ZSH_THEME="bira"
-alias chrome="google-chrome-stable &"
-#alias vim="/usr/local/bin/nvim"
-alias x11="ssh -X myronen2@remlnx.ews.illinois.edu"
-alias home="clear; cd ~"
-alias do_ubuntu="ssh root@104.131.113.213"
-alias wolfram="/Applications/Mathematica.app/Contents/MacOS/WolframKernel"
-#alias vim="mvim -v"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -52,17 +44,13 @@ alias wolfram="/Applications/Mathematica.app/Contents/MacOS/WolframKernel"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx)
+plugins=(git macos)
 
 source $ZSH/oh-my-zsh.sh
-autoload -U compinit
-compinit
-zstyle ':completion:*' menu select
 
 # User configuration
-#export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
 # export MANPATH="/usr/local/man:$MANPATH"
-# PS1="%{$terminfo[bold]$fg[blue]%}%n@%{$fg[green]%} %{$terminfo[bold]$fg[green]%} %~%{$reset_color%} %{$fg[red]%}‹$(rbenv version | sed -e "s/ (set.*$//")›%{$reset_color%} $(git_prompt_info)%{$reset_color%}"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -88,10 +76,22 @@ zstyle ':completion:*' menu select
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="/usr/local/bin:$PATH"
+alias mkae="make"
+alias makel="clear; make 2>&1 | tee /tmp/makel ; cat /tmp/makel | vim -c \"setlocal buftype=nofile bufhidden=hide noswapfile\" -"
+alias mkael="makel"
+alias vi="vim"
+alias gt="git difftool"
+alias gts="git difftool --staged"
+alias cdof="cd ~/Library/Mobile Documents/iCloud~com~omnigroup~OmniFocus"
 
- PS1="%{$terminfo[bold]$fg[blue]%}%n@%{$fg[green]%} %{$terminfo[bold]$fg[green]%} %~%{$reset_color%} %{$fg[red]%}$(git_prompt_info)%{$reset_color%}%B$%b "
-#PS1="╭─%{$terminfo[bold]$fg[green]%}%n@%m%{$reset_color%} %{$terminfo[bold]$fg[blue]%} %~%{$reset_color%} %{$fg[red]%}‹$(rvm-prompt i v g)›%{$reset_color%} $(git_prompt_info)%{$reset_color%}
-#╰─%B$%b"
+# This is fix thats needed to put the cursor in the right location
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export MANPAGER="vim -c MANPAGER -"
+export PATH=/Users/dimyr7/bin:$PATH
+export PATH=/opt/homebrew/Cellar/vim/8.2.4600/bin:$PATH
+export PATH=/opt/homebrew/bin:$PATH
+export PATH=/opt/homebrew/Cellar/tmux/3.2a_1:$PATH
+export PATH=/opt/homebrew/Cellar/pkgconf/1.8.0:$PATH
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
