@@ -1,30 +1,39 @@
 " use this vimrc, not the system wide
 set nocompatible
+syntax enable
+filetype plugin indent on
 
 " turn on syntax highlighting based on file type
-filetype on
 
 " adding to run time path
 set rtp+=~/.vim/bundle/Vundle.vim
 
 "Cool Plugins
 call vundle#begin()
+Plugin 'Tsuzat/NeoSolarized.nvim'
 Plugin 'gmarik/Vundle.vim' 					" Plugin Installer
 Plugin 'scrooloose/nerdtree'				" File system explorer
-Plugin 'Valloric/YouCompleteMe'				" Autocompletion engine
-Plugin 'ntpeters/vim-better-whitespace'  	" Better whitespace
-Plugin 'airblade/vim-gitgutter'
-Plugin 'rdnetto/YCM-generator'
-Plugin 'altercation/vim-colors-solarized' 	" Solarized theme
-Plugin 'zhaocai/GoldenView.vim'
-Plugin 'majutsushi/tagbar'					" Tag generator
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'bling/vim-bufferline'
-"Plugin 'mkitt/tabline.vim'
-"Plugin 'jceb/vim-orgmode'
+	"Plugin 'Valloric/YouCompleteMe'				" Auto completion
+Plugin 'ntpeters/vim-better-whitespace'  	" Highlights extra whitespace at the end of a line
+Plugin 'airblade/vim-gitgutter'				" Shows git diff changes
+Plugin 'zhaocai/GoldenView.vim'				" Automatic window resizing
+Plugin 'bling/vim-airline'					" Status bar at the bottom
+Plugin 'vim-airline/vim-airline-themes'		" Themes for airline
+Plugin 'majutsushi/tagbar'					" Generate tags to view in vim
+Plugin 'mkitt/tabline.vim'					" Tabs have more info
 Plugin 'tpope/vim-fugitive'
-Plugin 'ludwig/split-manpage.vim'
+	"Plugin 'ludwig/split-manpage.vim'
+	"Plugin 'lambdalisue/vim-manpager'
+Plugin 'vim-scripts/AnsiEsc.vim'
+	"Plugin 'terryma/vim-multiple-cursors'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'wesQ3/vim-windowswap'
+Plugin 'gcmt/taboo.vim'
+Plugin 'vim-scripts/scrollfix'
+Plugin 'tpope/vim-eunuch'
+Plugin 'mileszs/ack.Vim'
+Plugin 'junegunn/fzf'
+	"Plugin 'rdnetto/YCM-generator'
 call vundle#end()
 
 " Indent, highlighting, and searching

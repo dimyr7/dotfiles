@@ -1,18 +1,9 @@
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-export SVN_EDITOR=vim
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+export ZSH=/Users/dimyr7/.oh-my-zsh
 
 ZSH_THEME="bira"
-alias chrome="google-chrome-stable &"
-#alias vim="/usr/local/bin/nvim"
-alias x11="ssh -X myronen2@remlnx.ews.illinois.edu"
 alias home="clear; cd ~"
-alias do_ubuntu="ssh root@104.131.113.213"
-alias wolfram="/Applications/Mathematica.app/Contents/MacOS/WolframKernel"
-#alias vim="mvim -v"
+alias weather="curl wttr.in"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -52,17 +43,15 @@ alias wolfram="/Applications/Mathematica.app/Contents/MacOS/WolframKernel"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx)
-
+plugins=(git)
 source $ZSH/oh-my-zsh.sh
 autoload -U compinit
 compinit
 zstyle ':completion:*' menu select
 
 # User configuration
-#export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
 # export MANPATH="/usr/local/man:$MANPATH"
-# PS1="%{$terminfo[bold]$fg[blue]%}%n@%{$fg[green]%} %{$terminfo[bold]$fg[green]%} %~%{$reset_color%} %{$fg[red]%}‹$(rbenv version | sed -e "s/ (set.*$//")›%{$reset_color%} $(git_prompt_info)%{$reset_color%}"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -73,6 +62,7 @@ zstyle ':completion:*' menu select
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
